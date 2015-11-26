@@ -1,0 +1,61 @@
+html,
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}
+
+.navbar-default {
+   color: #000000;
+   background-color: #ADFF2F;
+}
+
+.sign-up {
+   color: #FF0000;
+}
+
+.container {
+   min-height: 100%;
+   position: relative;
+}
+
+header {
+   height: 50px;
+   text-align: center;
+   background-color: #FF0000;
+   color: #000000;
+   font-style: italic;
+}
+
+.body {
+   padding-bottom: absolute;
+   text-align: center;
+}
+
+.footer {
+   height: 20px;
+   text-align: center;
+   color: #000000;
+   background-color: #ADFF2F;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   font-style: italic;
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+}
+.center {
+  height: 40px;
+}
+
+table, th, td {
+  width: 700px;
+  height: 20px;
+  margin: auto;
+  text-align:center;
+  background-color: #ffffff;
+  border: 1px solid green;
+}

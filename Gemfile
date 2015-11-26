@@ -1,12 +1,16 @@
 source 'https://rubygems.org'
-source 'http://gems.github.com'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
+gem 'pry'
+
 gem 'mongoid', github: "mongoid/mongoid"
 gem 'bson_ext'
 gem 'devise'
+
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,6 +37,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# Bootstrap integration
+gem 'bootstrap-sass', '~> 3.3.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

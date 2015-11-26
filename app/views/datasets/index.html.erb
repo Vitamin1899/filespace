@@ -1,0 +1,25 @@
+<h1>Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File_id</th>
+      <th>Url</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datasets.each do |dataset| %>
+      <tr>
+        <td><%= dataset.id %></td>
+        <td><%= dataset.file.url %></td>
+        <td><%= link_to 'Download', {:controller => "datasets", :action => "file", :id => dataset.id } %></td>
+        <td><%= link_to 'Destroy', dataset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'form' %>
