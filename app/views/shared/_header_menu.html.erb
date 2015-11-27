@@ -5,9 +5,9 @@
     </div>
     <div class="navbar-brand">
       <% if user_signed_in? %>
-        <div><%= link_to "New File", new_dataset_path %></div>
+        <div><%= link_to "New File", datasets_path %></div>
       <% else %>
-        <div class="sign-up">Sign up and add yours file</div>
+        <div class="sign-up">Signup|Login for download file</div>
       <% end %>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

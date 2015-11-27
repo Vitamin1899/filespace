@@ -1,12 +1,12 @@
-<h1>Files</h1>
+<h2>Files</h2>
 
 <table>
   <thead>
     <tr>
-      <th>File_id</th>
-      <th>Url</th>
-      <th></th>
-      <th></th>
+      <th>file_id</th>
+      <th>filename</th>
+      <th>url</th>
+      <!--<th></th>-->
     </tr>
   </thead>
 
@@ -14,12 +14,14 @@
     <% @datasets.each do |dataset| %>
       <tr>
         <td><%= dataset.id %></td>
-        <td><%= dataset.file.url %></td>
+        <td><%= dataset.file_identifier %></td>
         <td><%= link_to 'Download', {:controller => "datasets", :action => "file", :id => dataset.id } %></td>
-        <td><%= link_to 'Destroy', dataset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%= link_to 'Destroy', dataset, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<h3>New File</h3>
 
 <%= render 'form' %>

@@ -1,27 +1,27 @@
 class DatasetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
-  #before_action :set_dataset, only: [:show, :edit, :update, :destroy]
+  before_action :set_dataset, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @datasets = Dataset.all
+    @datasets = Dataset.order_by(:created_at => 'desc')
     respond_with(@datasets)
   end
 
   def create
-    #@dataset = Dataset.new(dataset_params.merge({ user_id: current_user.id }))
-    #@dataset.save
     @dataset = current_user.datasets.create(dataset_params)
     redirect_to datasets_path, notice: "The file has been uploaded."
   end
 
   def destroy
-    @dataset.destroy
-    respond_with(@dataset)
+    if @dataset.user == current_user
+      @dataset.destroy
+      redirect_to datasets_path, notice: "The file has been deleted."
+    else
+      redirect_to datasets_path, notice: "The file can not be deleted."
+    end
   end
-
-
 
   def file
     @dataset = Dataset.find(params[:id])
