@@ -3,14 +3,20 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-gem 'pry'
-
 gem 'mongoid', github: "mongoid/mongoid"
 gem 'bson_ext'
 gem 'devise'
 
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+
+group :test, :development do
+  gem 'pry'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'mongoid-rspec'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
